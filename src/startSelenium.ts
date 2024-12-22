@@ -54,6 +54,7 @@ export async function startSelenium() {
 
         // Interact with shadow DOM elements
         console.log('Redirectd to Google Colab');
+        await driver.sleep(20000);
         // Locate the shadow host for the run button
         const shadowHost: WebElement = await driver.findElement(By.css(
             "colab-tab-layout-container colab-tab-pane colab-tab colab-shaded-scroller colab-run-button"

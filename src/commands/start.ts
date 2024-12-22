@@ -8,8 +8,7 @@ export const data = {
 
 export async function execute(interaction: CommandInteraction) {
     await interaction.reply('Starting server...');
-    await startSelenium();
-    return
+    
     try {
         await stopSelenium();
         
