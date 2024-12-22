@@ -1,3 +1,3 @@
-import "./bot.ts";
+import "bot";
 import "keep-alive";
 
