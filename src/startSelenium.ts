@@ -1,11 +1,11 @@
 import { Builder, By, until, WebDriver, WebElement } from 'selenium-webdriver';
-import chrome from 'selenium-webdriver/chrome';
+import { Options } from 'selenium-webdriver/chrome';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const email = process.env.EMAIL;
-const password = process.env.PASSWORD;
+const email = process.env.EMAIL!;
+const password = process.env.PASSWORD!;
 
 if (!email || !password) {
     throw new Error('Missing EMAIL or PASSWORD environment variables');
@@ -19,10 +19,11 @@ export async function startSelenium() {
         await stopSelenium();
     }
 
-    const options = new chrome.Options();
+    const options = new Options();
+    options.addArguments('--headless');
     driver = await new Builder()
         .forBrowser('chrome')
-        .setChromeOptions(options.addArguments('--headless=new'))
+        .setChromeOptions(options)
         .build();
 
     try {
