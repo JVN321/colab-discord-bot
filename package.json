@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch src/bot.ts",
     "build": "tsc",
-    "start": "node .",
+    "start": "node dist/bot.js",
     "build:install": "npm install && npm run build",
     "deploy:commands": "tsc && node dist/deploy-commands.js"
   },
