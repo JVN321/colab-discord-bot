@@ -11,7 +11,7 @@ export async function execute(interaction: CommandInteraction) {
     
     try {
         await stopSelenium();
-        
+        await startSelenium();
         await interaction.followUp('Server started, the bot should come online shortly.');
     } catch (error) {
         console.error('Error starting server:', error);
