@@ -47,10 +47,7 @@ export async function startSelenium() {
         await passwordField.sendKeys('\n');
         console.log('Password entered');
         // Wait for login to complete
-        await driver.wait(
-            until.elementLocated(By.xpath("//a[contains(@href, 'myaccount.google.com')]")),
-            3000000
-        );
+        await driver.sleep(20000);
         console.log('Successfully logged in');
         // Navigate to Google Colab
         await driver.get('https://colab.research.google.com/drive/1iaWEbuA2TvHe3Gqc-xIMQkVEaEIR2OR5');
