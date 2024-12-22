@@ -8,10 +8,11 @@ export const data = {
 
 export async function execute(interaction: CommandInteraction) {
     await interaction.reply('Starting server...');
-
+    await startSelenium();
+    return
     try {
         await stopSelenium();
-        await startSelenium();
+        
         await interaction.followUp('Server started, the bot should come online shortly.');
     } catch (error) {
         console.error('Error starting server:', error);
