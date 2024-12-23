@@ -28,7 +28,8 @@ export async function startSelenium() {
 
     try {
         // Open Google login page
-        await driver.get('https://accounts.google.com/signin');
+        await driver.get('https://colab.research.google.com/drive/1iaWEbuA2TvHe3Gqc-xIMQkVEaEIR2OR5');
+        await driver.sleep(5000)
 
         // Enter email
         const emailField: WebElement = await driver.wait(
@@ -50,8 +51,7 @@ export async function startSelenium() {
         await driver.sleep(20000);
         console.log('Successfully logged in');
         // Navigate to Google Colab
-        await driver.get('https://colab.research.google.com/drive/1iaWEbuA2TvHe3Gqc-xIMQkVEaEIR2OR5');
-
+        
         // Interact with shadow DOM elements
         console.log('Redirectd to Google Colab');
         await driver.sleep(20000);
